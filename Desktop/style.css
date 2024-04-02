@@ -1,8 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 
-bar
-
-
 *{
 	padding: 0;
 	margin: 0;
@@ -110,7 +107,7 @@ p {
 }
 
 #header .nav-list ul li:hover a {
-	color:#40AB4A;
+	color:#58b153;
 }
 #header .hamburger {
 	height: 60px;
@@ -133,14 +130,14 @@ p {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 3px solid #40AB4A;
+	border: 3px solid #58b153;
 	animation: hamburger_puls 1s ease infinite;
 }
 #header .hamburger .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
-	background-color: #40AB4A;
+	background-color: #58b153;
 	z-index: -1;
 }
 #header .hamburger .bar::after,
@@ -150,7 +147,7 @@ p {
 	height: 100%;
 	width: 100%;
 	left: 0;
-	background-color: #40AB4A;
+	background-color: #58b153;
 	transition: 0.3s ease;
 	transition-property: top, bottom;
 }
@@ -182,7 +179,7 @@ p {
 
 #hero h3 {
 	
-	color:#40AB4A ;
+	color:#58b153 ;
 	text-shadow: 
          1px  1px 0 #000;
 	font-size: 40px;
@@ -353,7 +350,7 @@ p {
 
 }
 #about .cta:hover{
-	background-color:#E0EDF3
+	background-color:#58b153
 
 }
 
