@@ -1,8 +1,9 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600;);
 
-section-title
-* {
+bar
+
+
+*{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -33,41 +34,25 @@ p {
 	line-height: 2.5rem;
 	font-weight: 300;
 	letter-spacing: 0.05rem;
+	
 }
 .section-title {
 	font-size:25px;
-	color: black;
+	color:#40AB4A ;
+	text-shadow: 
+         1px  1px 0 #000;
 	margin-bottom: 15px;
 	text-align: center;
 }
 
-.cta {
-	display: flex;
-	color: rgb(0, 0, 0);
-	background-color: transparent;
-	border: 2px solid rgb(0, 0, 0);
-	font-size: 2rem;
-	letter-spacing: 0.1rem;
-	margin-top: 30px;
-	transition: 0.3s ease;
-	transition-property: background-color, color;
-	justify-content: center;
-  }
-.cta:hover {
-	color: white;
-	background-color: rgb(17, 35, 17);
 
-}
+
 .brand h1 {
 	font-size: 3rem;
 	color: rgb(0, 0, 0);
-	font-family: chloe;
 
 }
-.brand h1 span {
-	color: rgb(0, 0, 0);
 
-}
 
 /* Header section */
 #header {
@@ -80,8 +65,8 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(255, 255, 255, 0.24);
-	transition: 0.3s ease background-color;
+	background-color: rgba(0, 0, 0, 0.24);
+	transition: 0.3s ease ;
 }
 
 
@@ -97,7 +82,7 @@ p {
 #header .nav-list ul {
 	list-style: none;
 	position: absolute;
-	background-color: rgb(0, 0, 0);
+	background-color: #E0EDF3 ;
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -124,44 +109,14 @@ p {
 	display: block;
 }
 
-
-
-
-#header .nav-list ul a::after {
-	content: attr(data-after);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	color: rgba(255, 255, 255, 0.021);
-	font-size: 13rem;
-	letter-spacing: 50px;
-	z-index: -1;
-	transition: 0.3s ease letter-spacing;
-}
-
-#header .nav-list ul a {
-	font-size: 2.5rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	text-decoration: none;
-	color: #000000;
-	text-transform: uppercase;
-	padding: 20px;
-	display: block;
-}
-#header .nav-list ul li:hover a::after {
-	transform: translate(-50%, -50%) scale(1);
-	letter-spacing: initial;
-}
 #header .nav-list ul li:hover a {
-	color:#E0EDF3;
+	color:#40AB4A;
 }
 #header .hamburger {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
-	border: 3px solid rgb(0, 0, 0);
+	border: 3px solid rgb(255, 255, 255);
 	border-radius: 50%;
 	position: relative;
 	display: flex;
@@ -178,14 +133,14 @@ p {
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
-	border: 3px solid #000000;
+	border: 3px solid #40AB4A;
 	animation: hamburger_puls 1s ease infinite;
 }
 #header .hamburger .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
-	background-color: rgb(0, 0, 0);
+	background-color: #40AB4A;
 	z-index: -1;
 }
 #header .hamburger .bar::after,
@@ -195,7 +150,7 @@ p {
 	height: 100%;
 	width: 100%;
 	left: 0;
-	background-color: rgb(0, 0, 0);
+	background-color: #40AB4A;
 	transition: 0.3s ease;
 	transition-property: top, bottom;
 }
@@ -215,6 +170,7 @@ p {
 /* End Header section */
 
 /* Hero Section */
+
 #hero {
 	background-image: url('https://tourismmedia.italia.it/is/image/mitur/landscape_1-100-1?wid=2880&hei=1280&fit=constrain,1&fmt=webp');
 	background-size: cover;
@@ -223,16 +179,20 @@ p {
 }
 
 
+
 #hero h3 {
-	font-family: chloe;
-	color: black;
-	font-size: 30px;
+	
+	color:#40AB4A ;
+	text-shadow: 
+         1px  1px 0 #000;
+	font-size: 40px;
 	text-align: center;
 }
 
 /* End Hero Section */
 
 /* Services Section */
+
 *{
 	margin: 0;padding: 0;
     box-sizing: border-box;
@@ -262,7 +222,7 @@ p {
 #services .service-item {
 
 	margin: 5px;
-	max-width: 220px;
+	max-width: 200px;
 	min-width: 100px;
 	
   }
@@ -280,6 +240,15 @@ p {
 #services .service-item:hover img{
 	transform: scale(1.3);
 }
+#services .p-of-title{
+	color: black;
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 150px;
+	margin-right: 150px;
+	margin-left: 150px;
+}
+
 
 /* End Services Section */
 
