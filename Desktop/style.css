@@ -109,7 +109,7 @@ p {
 #header .nav-list ul li:hover a {
 	color:#58b153;
 }
-#header .hamburger {
+#header .nib {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
@@ -124,24 +124,24 @@ p {
 	transform: scale(0.8);
 	margin-right: 20px;
 }
-#header .hamburger:after {
+#header .nib:after {
 	position: absolute;
 	content: '';
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
 	border: 3px solid #58b153;
-	animation: hamburger_puls 1s ease infinite;
+	animation: hamburger_puls 1s ease infinite; /**/
 }
-#header .hamburger .bar {
+#header .nib .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
 	background-color: #58b153;
 	z-index: -1;
 }
-#header .hamburger .bar::after,
-#header .hamburger .bar::before {
+#header .nib .bar::after,
+#header .nib .bar::before {
 	content: '';
 	position: absolute;
 	height: 100%;
@@ -151,16 +151,16 @@ p {
 	transition: 0.3s ease;
 	transition-property: top, bottom;
 }
-#header .hamburger .bar::after {
+#header .nib .bar::after {
 	top: 8px;
 }
-#header .hamburger .bar::before {
+#header .nib .bar::before {
 	bottom: 8px;
 }
-#header .hamburger.active .bar::before {
+#header .nib.active .bar::before {
 	bottom: 0;
 }
-#header .hamburger.active .bar::after {
+#header .nib.active .bar::after {
 	top: 0;
 }
 
@@ -188,7 +188,7 @@ p {
 
 /* End Hero Section */
 
-/* Services Section */
+/* destinationGuide Section */
 
 *{
 	margin: 0;padding: 0;
@@ -196,7 +196,7 @@ p {
 	font-family: chloe;
 }
     
-#services{
+#destinationGuide{
 	margin: 0;
 	background-color: #ffffff;
 	width: 100%;
@@ -206,7 +206,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
   }
-  #services figure{
+  #destinationGuide figure{
 	position:relative;
 	 height: 250px;
 	 cursor: pointer;
@@ -216,7 +216,7 @@ p {
 	 box-shadow: 0px 15px 25px rgba(37, 38, 37, 0.5);
 }
 
-#services .service-item {
+#destinationGuide .destinationGuide-item {
 
 	margin: 5px;
 	max-width: 225px;
@@ -224,11 +224,11 @@ p {
 	flex: 1 1 auto;
 	
   }
-  #services .service-item{
+  #destinationGuide .destinationGuide-item{
 
 	overflow: hidden;
   }
-#services img{
+#destinationGuide img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -236,10 +236,10 @@ p {
 	will-change: transform;
 }
 
-#services .service-item:hover img{
+#destinationGuide .destinationGuide-item:hover img{
 	transform: scale(1.3);
 }
-#services .p-of-title{
+#destinationGuide .p-of-title{
 	color: black;
 	text-align: center;
 	font-size: 22px;
@@ -247,10 +247,10 @@ p {
 }
 
 
-/* End Services Section */
+/* End destinationGuide Section */
 
-/* Projects section */
-#projects .projects {
+/* WhereToGO section */
+#WhereToGO .WhereToGO {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -258,13 +258,13 @@ p {
 }
 
 
-#projects .all-projects {
+#WhereToGO .all-WhereToGO {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-#projects .project-item {
+#WhereToGO .WhereToGO-item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -274,7 +274,7 @@ p {
 	overflow: hidden;
 	border-radius: 10px;
 }
-#projects .project-info {
+#WhereToGO .WhereToGO-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
@@ -285,32 +285,32 @@ p {
 	background-color: rgba(16, 17, 17, 0.159); /* الأسود الشفاف بنسبة 50% */
     color: #000000; /* اللون الأبيض للنص */
 }
-#projects .project-info h1 {
+#WhereToGO .WhereToGO-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
 	font-family: Chloe;
 	margin-bottom: 50px;
 
 }
-#projects .project-info h2 {
+#WhereToGO .WhereToGO-info h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
 	font-family: Chloe;
 
 }
-#projects .project-info p {
+#WhereToGO .WhereToGO-info p {
 	color: rgb(0, 0, 0);
 	font-family: Chloe;
 
 }
-#projects .project-img {
+#WhereToGO .WhereToGO-img {
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
 }
-#projects .project-img:after {
+#WhereToGO .WhereToGO-img:after { /* Using After*/
 	content: '';
 	position: absolute;
 	left: 0;
@@ -320,13 +320,13 @@ p {
 	background-color: rgba(239, 239, 239, 0.229);
 	opacity: 0.7;
 }
-#projects .project-img img {
+#WhereToGO .WhereToGO-img img {
 	transition: 0.3s ease transform;
 }
-#projects .project-item:hover .project-img img {
+#WhereToGO .WhereToGO-item:hover .WhereToGO-img img {
 	transform: scale(1.1);
 }
-/* End Projects section */
+/* End WhereToGO section */
 
 /* About Section */
 
@@ -405,7 +405,7 @@ background-color: #E0EDF3;
 /* End Footer */
 
 /* Keyframes */
-@keyframes hamburger_puls {
+@keyframes hamburger_puls { /*hereee*/
 	0% {
 		opacity: 1;
 		transform: scale(1);
@@ -515,7 +515,7 @@ background-color: #E0EDF3;
 	
 	/* End contact  */
 }
-/* End Media Query For Tablet */
+/* End Media Query For Tablet */ /*هنا ينحذف حق التابلت؟؟*/
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
