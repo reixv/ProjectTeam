@@ -1,5 +1,4 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-
 *{
 	padding: 0;
 	margin: 0;
@@ -109,7 +108,7 @@ p {
 #header .nav-list ul li:hover a {
 	color:#58b153;
 }
-#header .nib {
+#header .hamburger {
 	height: 60px;
 	width: 60px;
 	display: inline-block;
@@ -124,24 +123,24 @@ p {
 	transform: scale(0.8);
 	margin-right: 20px;
 }
-#header .nib:after {
+#header .hamburger:after {
 	position: absolute;
 	content: '';
 	height: 100%;
 	width: 100%;
 	border-radius: 50%;
 	border: 3px solid #58b153;
-	animation: hamburger_puls 1s ease infinite; /**/
+	animation: hamburger_puls 1s ease infinite;
 }
-#header .nib .bar {
+#header .hamburger .bar {
 	height: 2px;
 	width: 30px;
 	position: relative;
 	background-color: #58b153;
 	z-index: -1;
 }
-#header .nib .bar::after,
-#header .nib .bar::before {
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
 	content: '';
 	position: absolute;
 	height: 100%;
@@ -151,29 +150,22 @@ p {
 	transition: 0.3s ease;
 	transition-property: top, bottom;
 }
-#header .nib .bar::after {
+#header .hamburger .bar::after {
 	top: 8px;
 }
-#header .nib .bar::before {
+#header .hamburger .bar::before {
 	bottom: 8px;
 }
-#header .nib.active .bar::before {
+#header .hamburger.active .bar::before {
 	bottom: 0;
 }
-#header .nib.active .bar::after {
+#header .hamburger.active .bar::after {
 	top: 0;
 }
 
 /* End Header section */
 
 /* Hero Section */
-
-#hero {
-	background-image: url('https://tourismmedia.italia.it/is/image/mitur/landscape_1-100-1?wid=2880&hei=1280&fit=constrain,1&fmt=webp');
-	background-size: cover;
-	background-position: top center;
-	position: relative;
-}
 
 
 
@@ -188,7 +180,7 @@ p {
 
 /* End Hero Section */
 
-/* destinationGuide Section */
+/* Services Section */
 
 *{
 	margin: 0;padding: 0;
@@ -196,7 +188,7 @@ p {
 	font-family: chloe;
 }
     
-#destinationGuide{
+#services{
 	margin: 0;
 	background-color: #ffffff;
 	width: 100%;
@@ -206,7 +198,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
   }
-  #destinationGuide figure{
+  #services figure{
 	position:relative;
 	 height: 250px;
 	 cursor: pointer;
@@ -216,7 +208,7 @@ p {
 	 box-shadow: 0px 15px 25px rgba(37, 38, 37, 0.5);
 }
 
-#destinationGuide .destinationGuide-item {
+#services .service-item {
 
 	margin: 5px;
 	max-width: 225px;
@@ -224,11 +216,11 @@ p {
 	flex: 1 1 auto;
 	
   }
-  #destinationGuide .destinationGuide-item{
+  #services .service-item{
 
 	overflow: hidden;
   }
-#destinationGuide img{
+#services img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -236,10 +228,10 @@ p {
 	will-change: transform;
 }
 
-#destinationGuide .destinationGuide-item:hover img{
+#services .service-item:hover img{
 	transform: scale(1.3);
 }
-#destinationGuide .p-of-title{
+#services .p-of-title{
 	color: black;
 	text-align: center;
 	font-size: 22px;
@@ -247,10 +239,10 @@ p {
 }
 
 
-/* End destinationGuide Section */
+/* End Services Section */
 
-/* WhereToGO section */
-#WhereToGO .WhereToGO {
+/* Projects section */
+#projects .projects {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -258,13 +250,13 @@ p {
 }
 
 
-#WhereToGO .all-WhereToGO {
+#projects .all-projects {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-#WhereToGO .WhereToGO-item {
+#projects .project-item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -274,7 +266,7 @@ p {
 	overflow: hidden;
 	border-radius: 10px;
 }
-#WhereToGO .WhereToGO-info {
+#projects .project-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
@@ -285,32 +277,32 @@ p {
 	background-color: rgba(16, 17, 17, 0.159); /* الأسود الشفاف بنسبة 50% */
     color: #000000; /* اللون الأبيض للنص */
 }
-#WhereToGO .WhereToGO-info h1 {
+#projects .project-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
 	font-family: Chloe;
 	margin-bottom: 50px;
 
 }
-#WhereToGO .WhereToGO-info h2 {
+#projects .project-info h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
 	font-family: Chloe;
 
 }
-#WhereToGO .WhereToGO-info p {
+#projects .project-info p {
 	color: rgb(0, 0, 0);
 	font-family: Chloe;
 
 }
-#WhereToGO .WhereToGO-img {
+#projects .project-img {
 	flex-basis: 50%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
 }
-#WhereToGO .WhereToGO-img:after { /* Using After*/
+#projects .project-img:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -320,13 +312,13 @@ p {
 	background-color: rgba(239, 239, 239, 0.229);
 	opacity: 0.7;
 }
-#WhereToGO .WhereToGO-img img {
+#projects .project-img img {
 	transition: 0.3s ease transform;
 }
-#WhereToGO .WhereToGO-item:hover .WhereToGO-img img {
+#projects .project-item:hover .project-img img {
 	transform: scale(1.1);
 }
-/* End WhereToGO section */
+/* End Projects section */
 
 /* About Section */
 
@@ -405,7 +397,7 @@ background-color: #E0EDF3;
 /* End Footer */
 
 /* Keyframes */
-@keyframes hamburger_puls { /*hereee*/
+@keyframes hamburger_puls {
 	0% {
 		opacity: 1;
 		transform: scale(1);
@@ -515,7 +507,7 @@ background-color: #E0EDF3;
 	
 	/* End contact  */
 }
-/* End Media Query For Tablet */ /*هنا ينحذف حق التابلت؟؟*/
+/* End Media Query For Tablet */
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
