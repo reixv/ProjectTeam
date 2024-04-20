@@ -5,92 +5,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  
   <link rel="stylesheet" href="LogIn.css">
 </head>
 <body>
-  <main>
-    <div class="page-container">
-      <div class="grid-container">
-        <div class="left-side">
-          <div class="img-and-text">
-            <img class="cart-illustration" src="img/cart-illustration.png" alt="">
-          </div>
-        </div>
-        <div class="right-side">
-          <div class="wrapper">
-            <h2>Welcome Back!</h2>
-            <form action="" method="post">
-              <label for="email">Email address</label>
-              <div class="email-input-container">
-                <i class="fi fi-rr-envelope icon-email"></i>
-                <input type="email" name="email" placeholder="Your email address" id="email">
-              </div>
-              <label for="password">Password</label>
-              <div class="password-input-container">
-                <i class="fi fi-rr-lock icon-password"></i>
-                <input type="password" name="password" placeholder="Your password" id="password">
-              </div>
-              <button id="login-button" type="submit" name="login">Log in</button>
-            </form>
-            <a href="register.php">Back </a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-</body>
-</html>
-
-
-
-
 <?php
-session_start(); // بدء الجلسة لتخزين بيانات الجلسة
+session_start();
+$error_message = ''; // Initialize the error message
 
-if(isset($_POST["login"])) {
+if (isset($_POST["login"])) {
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    // الاتصال بقاعدة البيانات
+    // بيانات الاتصال بقاعدة البيانات
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $db_password = "";
     $dbname = "login";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // التحقق من الاتصال
+    $conn = new mysqli($servername, $username, $db_password, $dbname);
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // استعلام SQL لاسترداد بيانات المستخدم باستخدام البريد الإلكتروني
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT id, email, password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        // إذا كان هناك سجل متطابق مع البريد الإلكتروني
         $row = $result->fetch_assoc();
-        // التحقق مما إذا كانت كلمة المرور صحيحة
         if (password_verify($password, $row["password"])) {
-            // تسجيل الدخول بنجاح
+            $_SESSION["loggedin"] = true;
             $_SESSION["user_id"] = $row["id"];
             $_SESSION["user_email"] = $row["email"];
-            // يمكنك إعادة توجيه المستخدم إلى الصفحة المناسبة هنا
-            echo "Login successful!";
+            header("location: VistSaudi.php");
+            exit;
         } else {
-            // كلمة المرور غير صحيحة
-            echo "Invalid password!";
+            $error_message = "Incorrect email or password!";
         }
     } else {
-        // لم يتم العثور على مستخدم مع هذا البريد الإلكتروني
-        echo "No user found with this email address!";
+        $error_message = "Incorrect email or password!";
     }
-
+    $stmt->close();
     $conn->close();
 }
 ?>
+  <main>
+    <div class="page-container">
+      <div class="grid-container">
+        <div class="left-side">
+        </div>
+        <div class="right-side">
+          <div class="wrapper">
+            <h2>Welcome Back!</h2>
+            <form action="Login.php" method="post">
+              <label for="email">Email address</label>
+              <div class="email-input-container">
+                <i class="fi fi-rr-envelope icon-email"></i>
+                <input type="email" name="email" placeholder="Your email address" id="email" required>
+              </div>
+              <label for="password">Password</label>
+              <div class="password-input-container">
+                <i class="fi fi-rr-lock icon-password"></i>
+                <input type="password" name="password" placeholder="Your password" id="password" required>
+              </div>
+              <button id="login-button" type="submit" name="login">Log in</button>
+            </form>
+            <?php if (!empty($error_message)): ?>
+                <p class="error"><?php echo $error_message; ?></p>
+            <?php endif; ?>
+            <a href="register.php">Need an account? Register here.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

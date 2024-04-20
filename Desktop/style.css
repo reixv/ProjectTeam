@@ -41,14 +41,11 @@ p {
 	text-align: center;
 }
 
-
-
 .brand h1 {
 	font-size: 3rem;
 	color: rgb(0, 0, 0);
 
 }
-
 
 /* Header section */
 #header {
@@ -64,7 +61,6 @@ p {
 	background-color: rgba(0, 0, 0, 0.24);
 	transition: 0.3s ease ;
 }
-
 
 #header .nav-bar {
 	display: flex;
@@ -165,22 +161,8 @@ p {
 
 /* End Header section */
 
-/* Hero Section */
 
-
-
-#hero h3 {
-	
-	color:#58b153 ;
-	text-shadow: 
-         1px  1px 0 #000;
-	font-size: 40px;
-	text-align: center;
-}
-
-/* End Hero Section */
-
-/* Services Section */
+/* destinationGuide Section */
 
 *{
 	margin: 0;padding: 0;
@@ -188,7 +170,7 @@ p {
 	font-family: chloe;
 }
     
-#services{
+#destinationGuide{
 	margin: 0;
 	background-color: #ffffff;
 	width: 100%;
@@ -198,7 +180,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
   }
-  #services figure{
+  #destinationGuide figure{
 	position:relative;
 	 height: 250px;
 	 cursor: pointer;
@@ -208,7 +190,7 @@ p {
 	 box-shadow: 0px 15px 25px rgba(37, 38, 37, 0.5);
 }
 
-#services .service-item {
+#destinationGuide .destinationGuide-item {
 
 	margin: 5px;
 	max-width: 225px;
@@ -216,11 +198,11 @@ p {
 	flex: 1 1 auto;
 	
   }
-  #services .service-item{
+  #destinationGuide .destinationGuide-item{
 
 	overflow: hidden;
   }
-#services img{
+#destinationGuide img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -228,21 +210,20 @@ p {
 	will-change: transform;
 }
 
-#services .service-item:hover img{
+#destinationGuide .destinationGuide-item:hover img{
 	transform: scale(1.3);
 }
-#services .p-of-title{
+#destinationGuide .p-of-title{
 	color: black;
 	text-align: center;
 	font-size: 22px;
 
 }
 
+/* End destinationGuide Section */
 
-/* End Services Section */
-
-/* Projects section */
-#projects .projects {
+/* WhereToGO section */
+#WhereToGO .WhereToGO {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -250,13 +231,13 @@ p {
 }
 
 
-#projects .all-projects {
+#WhereToGO .all-WhereToGO {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-#projects .project-item {
+#WhereToGO .WhereToGO-item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -266,7 +247,7 @@ p {
 	overflow: hidden;
 	border-radius: 10px;
 }
-#projects .project-info {
+#WhereToGO .WhereToGO-info {
 	padding: 30px;
 	flex-basis: 50%;
 	height: 100%;
@@ -277,32 +258,34 @@ p {
 	background-color: rgba(16, 17, 17, 0.159); /* الأسود الشفاف بنسبة 50% */
     color: #000000; /* اللون الأبيض للنص */
 }
-#projects .project-info h1 {
+#WhereToGO .WhereToGO-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
 	font-family: Chloe;
 	margin-bottom: 50px;
 
 }
-#projects .project-info h2 {
+#WhereToGO .WhereToGO-info h2 {
 	font-size: 1.8rem;
 	font-weight: 500;
 	margin-top: 10px;
 	font-family: Chloe;
 
 }
-#projects .project-info p {
+#WhereToGO .WhereToGO-info p {
 	color: rgb(0, 0, 0);
 	font-family: Chloe;
 
 }
-#projects .project-img {
-	flex-basis: 50%;
-	height: 300px;
-	overflow: hidden;
-	position: relative;
+#WhereToGO .WhereToGO-img {
+	
+    flex-basis: 50%;
+    height: auto; /* تغيير من 300px إلى auto ليتكيف الارتفاع تلقائيًا مع حجم الصورة */
+    overflow: hidden;
+    position: relative;
 }
-#projects .project-img:after {
+
+#WhereToGO .WhereToGO-img:after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -312,16 +295,15 @@ p {
 	background-color: rgba(239, 239, 239, 0.229);
 	opacity: 0.7;
 }
-#projects .project-img img {
+#WhereToGO .WhereToGO-img img {
 	transition: 0.3s ease transform;
 }
-#projects .project-item:hover .project-img img {
+#WhereToGO .WhereToGO-item:hover .WhereToGO-img img {
 	transform: scale(1.1);
 }
-/* End Projects section */
+/* End WhereToGO section */
 
 /* About Section */
-
 
 #about  h2 {
 	font-size: 2rem;
@@ -346,24 +328,20 @@ p {
 
 }
 
-
 /* End About Section */
 
-/* contact Section */
 
-/*End contact Section */
-
-/* Footer */
-#footer {
+/* contact */
+#contact {
 background-color: #E0EDF3;
 }
-#footer .footer {
+#contact .contact {
 	min-height: 200px;
 	flex-direction: column;
 	padding-top: 50px;
 	padding-bottom: 10px;
 }
-#footer h2 {
+#contact h2 {
 	color: white;
 	font-weight: 500;
 	font-size: 1.8rem;
@@ -372,29 +350,29 @@ background-color: #E0EDF3;
 	margin-bottom: 10px;
 	font-family: chloe;
 }
-#footer .social-icon {
+#contact .social-icon {
 	display: flex;
 	margin-bottom: 30px;
 }
-#footer .social-item {
+#contact .social-item {
 	height: 50px;
 	width: 50px;
 	margin: 0 5px;
 }
-#footer .social-item img {
+#contact .social-item img {
 	filter: grayscale(1);
 	transition: 0.3s ease filter;
 }
-#footer .social-item:hover img {
+#contact .social-item:hover img {
 	filter: grayscale(0);
 }
-#footer p {
+#contact p {
 	color: white;
 	font-size: 1.3rem;
 	font-family: chloe;
 
 }
-/* End Footer */
+/* End contact */
 
 /* Keyframes */
 @keyframes hamburger_puls {
@@ -442,41 +420,33 @@ background-color: #E0EDF3;
 
 	}
 
-	/* Hero */
-	#hero h1 {
-		font-size: 7rem;
-		font-family: chloe;
-
-	}
-	/* End Hero */
-
-	/* Services Section */
-	#services .service-bottom .service-item {
+	/* destinationGuide Section */
+	#destinationGuide .destinationGuide .destinationGuide-item {
 		flex-basis: 45%;
 		margin: 2.5%;
 	}
-	/* End Services Section */
+	/* End destinationGuide Section */
 
-	/* Project */
-	#projects .project-item {
+	/* WhereToGO */
+	#WhereToGO .WhereToGO-item {
 		flex-direction: row;
 	}
-	#projects .project-item:nth-child(even) {
+	#WhereToGO .WhereToGO-item:nth-child(even) {
 		flex-direction: row-reverse;
 	}
-	#projects .project-item {
+	#WhereToGO .WhereToGO-item {
 		height: 400px;
 		margin: 0;
 		width: 100%;
 		border-radius: 0;
 	}
-	#projects .all-projects .project-info {
+	#WhereToGO .all-WhereToGO .WhereToGO-info {
 		height: 100%;
 	}
-	#projects .all-projects .project-img {
+	#WhereToGO .all-WhereToGO .WhereToGO-img {
 		height: 100%;
 	}
-	/* End Project */
+	/* End WhereToGO */
 
 	/* About */
 	#about .about {
@@ -487,7 +457,7 @@ background-color: #E0EDF3;
 		height: 400px;
 		padding-left: 60px;
 	}
-	#about .about .col-left .about-img::after {
+	#about .about .col-left .about::after {
 		left: -45px;
 		top: 34px;
 		height: 98%;
@@ -503,9 +473,58 @@ background-color: #E0EDF3;
 	}
 	/* End About */
 
-	/* contact  */
+
+
+	/*  why Section */
+	.whyus { 
+		display: flex; 
+		flex-direction: column;
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 90%;
+	  }
+	  .why-its {
+		display: flex; 
+		justify-content: space-between; 
+		flex-wrap: wrap; 
+		width: 100%;
+	  }
+	  .why-it {
+		flex: 0 0 calc(33.33% - 60px); 
+		padding: 20px;
+		text-align: center;
+		border-radius: 10px;
+		margin: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center; 
+		flex-direction: column;
+		box-shadow: 0px 0px 18px 0 #0000002c;
+		transition: 0.3s ease box-shadow;
+	  }
+	  .why-it:hover {
+		box-shadow: 0px 0px 5px 0 #0000002c;
+	  }
+	  .icon {
+		width: 200px;
+		margin-bottom: 10px;
+	  }
 	
-	/* End contact  */
+	  .why-info h1 {
+		font-size: 2.5rem;
+		font-weight: 500;
+		margin-bottom: 5px;
+	  }
+	
+	  .why-info h2 {
+		font-size: 1.3rem;
+		line-height: 2rem;
+		font-weight: 500;
+	  }
+
+	/* End why Section */
+
+
 }
 /* End Media Query For Tablet */
 
@@ -533,7 +552,7 @@ background-color: #E0EDF3;
 	}
 	/* End header */
 
-	#services .service-bottom .service-item {
+	#destinationGuide .destinationGuide .destinationGuide-item {
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
