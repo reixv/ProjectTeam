@@ -28,7 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $guestNumber = isset($_POST["guestNumber"]) ? $conn->real_escape_string($_POST["guestNumber"]) : "N/A";
     $to = $conn->real_escape_string($_POST["to"]);
     $date = $conn->real_escape_string($_POST["date"]);
+
+    // Set server timezone
+    date_default_timezone_set('Asia/Riyadh');
     $today = date("Y-m-d");
+
+    // Ensure date is in the correct format
+    $date = date('Y-m-d', strtotime($date)); // Format the date from the form
 
     if ($date < $today) {
         echo "<script>alert('Please select a future date for your visit.');</script>";
@@ -59,7 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
