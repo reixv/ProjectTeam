@@ -25,45 +25,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $conn->real_escape_string($_POST["phone"]);
     $age = $conn->real_escape_string($_POST["age"]);
     $guests = $conn->real_escape_string($_POST["guests"]);
-    $guestNumber = isset($_POST["guestNumber"]) ? $conn->real_escape_string($_POST["guestNumber"]) : "N/A";
-    $to = $conn->real_escape_string($_POST["to"]);
+    $guestNumber = isset($_POST["guestNumber"]) ? $conn->real_escape_string($_POST["guestNumber"]) : 0;
+    $to_activity = isset($_POST["activity"]) ? $conn->real_escape_string($_POST["activity"]) : '';
     $date = $conn->real_escape_string($_POST["date"]);
 
-    // Set server timezone
     date_default_timezone_set('Asia/Riyadh');
     $today = date("Y-m-d");
-
-    // Ensure date is in the correct format
     $date = date('Y-m-d', strtotime($date)); // Format the date from the form
 
-    if ($date < $today) {
-        echo "<script>alert('Please select a future date for your visit.');</script>";
-    } elseif (!preg_match("/^\+966\d{9}$/", $phone)) {
-        echo "<script>alert('Please enter a valid Saudi phone number starting with +966.');</script>";
-    } else {
+    if ($date >= $today) {
+        // Prepare and bind
         $stmt = $conn->prepare("INSERT INTO tickets (firstname, lastname, email, phone, age, guests, guestNumber, to_activity, date_of_visit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssisssi", $firstname, $lastname, $email, $phone, $age, $guests, $guestNumber, $to, $date);
-        if ($stmt->execute()) {
-            $_SESSION['ticket_data'] = [
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'email' => $email,
-                'phone' => $phone,
-                'age' => $age,
-                'guests' => $guests,
-                'guestNumber' => $guests == 'yes' ? $guestNumber : 'N/A',
-                'to' => $to,
-                'date' => $date
-            ];
-            header("Location: ticket_details.php");
-            exit;
-        } else {
-            echo "Error: " . $stmt->error;
-        }
+        $stmt->bind_param("ssssisssi", $firstname, $lastname, $email, $phone, $age, $guests, $guestNumber, $to_activity, $date);
+        $stmt->execute();
+        echo "<script>alert('Your ticket has been booked successfully.');</script>";
         $stmt->close();
+    } else {
+        echo "<script>alert('Please select a future date for your visit.');</script>";
     }
-    $conn->close();
 }
+$conn->close();
 ?>
 
 <!DOCTYPE html>
