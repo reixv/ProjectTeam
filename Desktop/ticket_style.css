@@ -1,0 +1,32 @@
+.ticket-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #4f7d61;;
+    border-radius: 10px;
+    background: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.ticket-container h1 {
+    color: #333;
+    text-align: center;
+}
+
+.ticket-container p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+
+.thank-you-message {
+        text-align: center;
+        margin: 20px auto;
+        max-width: 600px; /* يتطابق مع عرض بوكس الحجز */
+        padding: 10px;
+        border-radius: 10px; /* التقريب كما في بوكس الحجز */
+        font-size: 18px;
+        color: #444;
+    
+}

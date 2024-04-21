@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Chloe&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Chloe; /* Fallback to sans-serif if Chloe isn't available */
+}
+
+.header {
+    /* background: url('background_ticket.jpeg') no-repeat center top;*/
+    background-size: cover;
+    text-align: center;
+    padding: 60px 0;
+    color: white;
+    position: relative;
+}
+
+.header h1 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ticket-form {
+    background-color: #ffffff; /* Background color for the form */
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    color: #333; /* Text color for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    top: 50px;
+}
+
+h2 {
+   
+
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url('background_ticket.jpeg');
+    background-size: cover; /* Make the background image cover the entire element */
+    background-position: center; /* Center the background image */
+    color: white; /* Text color */
+    padding: 20px 0; /* Padding around the text */
+    margin: 0; /* Remove default margin */
+}
+
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.input-with-flag {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-flag input[type="tel"] {
+    padding-left: 70px; /* Adjusted for better spacing */
+    height: 40px; /* Height of the input field */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-with-flag::before {
+    content: "+966";
+    position: absolute;
+    left: 10px;
+    color: #555;
+    font-size: 16px; /* Adjusted font size for better visibility */
+}
+
+.input-with-flag::after {
+    content: "";
+    position: absolute;
+    left: 50px; /* Position right after the country code */
+    width: 20px;
+    height: 20px;
+    background-image: url('saudi-flag.png'); /* Path to your Saudi flag image */
+    background-size: cover;
+    background-position: center;
+}
+
+
+.form-group input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+/* Additional styles for radio buttons and their labels */
+.form-group fieldset {
+    border: none;
+}
+
+.form-group label input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style for the footer, if you have one */
+.footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.input-with-flag {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* تأكد من وجود مساحة كافية حول العنصر */
+}
+
+.input-with-flag input[type="tel"] {
+    padding-left: 90px; /* زيادة المساحة لتجنب التداخل */
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-with-flag::before {
+    content: "+966";
+    position: absolute;
+    left: 10px; /* تعديل حسب الحاجة لتوفير مساحة كافية */
+    top: 50%; /* ضبط الموضع العمودي */
+    transform: translateY(-50%); /* توسيط النص عموديا */
+    color: #555;
+    font-size: 16px;
+}
+
+.input-with-flag::after {
+    content: "";
+    position: absolute;
+    left: 60px; /* تعديل لإعطاء مساحة بين الرمز والعلم */
+    top: 50%;
+    transform: translateY(-50%); /* توسيط العلم عموديا */
+    width: 24px; /* تعديل الحجم حسب الحاجة */
+    height: 24px;
+    background-image: url('saudi-flag.png'); /* تأكد من صحة المسار */
+    background-size: cover;
+    background-position: center;
+}
+.return-home {
+    display: block;
+    margin-top: 20px; /* للفصل بين الزر والرابط */
+    text-align: center; /* لتوسيط الرابط */
+    color: #1a73e8; /* لون أزرق فاتح للرابط ليكون مميز */
+    text-decoration: none; /* لإزالة التحتاني */
+    font-size: 16px; /* حجم الخط مناسب للقراءة */
+}
+
+.return-home:hover {
+    text-decoration: underline; /* تحتاني عند تمرير الماوس */
+}
